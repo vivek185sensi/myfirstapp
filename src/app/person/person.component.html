@@ -1,0 +1,63 @@
+<!-- <p>person works!</p> -->
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h3>Deploy Angular App</h3>
+      <div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+          <div>
+            <label>
+              PersonID:
+              <input formControlName="PersonID" placeholder="Your id">
+            </label>
+          </div>
+          <div>
+            <label>
+              LastName:
+              <input formControlName="LastName" placeholder="Last Name">
+            </label>
+          </div>
+          <div>
+            <label>
+              FirstName:
+              <input formControlName="FirstName" placeholder="First Name">
+            </label>
+          </div>
+          <div>
+            <label>
+              Address:
+              <input formControlName="Address" placeholder="Address">
+            </label>
+          </div>
+          <div>
+            <label>
+              City:
+              <input formControlName="City" placeholder="City">
+            </label>
+          </div>
+          <button type="submit" class="btn btn-success btn-sm">Send</button>
+        </form>
+      </div>
+    </div>
+    <div>
+      <table class="table table-bordered table-sm table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Address</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of data">
+            <td>{{d.PersonID}}</td>
+            <td>{{d.LastName}}</td>
+            <td>{{d.FirstName}}</td>
+            <td>{{d.Address}}</td>
+            <td>{{d.City}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
