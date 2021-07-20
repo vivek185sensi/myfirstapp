@@ -4,7 +4,7 @@ const app=exp()
 const sql = require('mssql');
 
 //method for requesting all data  from section table
-personrouter.get('/getdata', function (req, res, err) {
+personrouter.get('getdata', function (req, res, err) {
     // create Request object
     var request = new sql.Request();
     // query to the database and get the records
@@ -23,7 +23,7 @@ personrouter.get('/getdata', function (req, res, err) {
 
 
 personrouter.use(exp.json())
-personrouter.post('/insert',(req,res,err)=>{
+personrouter.post('insert',(req,res,err)=>{
     // create Request object
     var request = new sql.Request();
     request.query("INSERT INTO Persons (PersonID, LastName, FirstName,Address,City) VALUES ('" +req.body.PersonID+ "', '"+req.body.LastName+"', '"+req.body.FirstName+"','"+req.body.Address+"','"+req.body.City+"')",(err,success)=>{
