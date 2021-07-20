@@ -3,7 +3,7 @@ var app = express()
 var path=require('path')
 var sql = require("mssql");
 
-app.use(express.static(path.join(__dirname,"dist/basicapp")))
+app.use(express.static(path.join(__dirname,"/dist/basicapp")))
 
 var config = {
     user: 'sa',
